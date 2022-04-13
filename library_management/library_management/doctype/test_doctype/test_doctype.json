@@ -1,0 +1,56 @@
+{
+ "allow_guest_to_view": 1,
+ "creation": "2022-04-13 14:14:03.559267",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "customer",
+  "date_of_birth",
+  "phone"
+ ],
+ "fields": [
+  {
+   "fieldname": "date_of_birth",
+   "fieldtype": "Date",
+   "label": "Date of birth"
+  },
+  {
+   "fieldname": "phone",
+   "fieldtype": "Data",
+   "label": "Phone",
+   "options": "Phone"
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Name",
+   "reqd": 1
+  }
+ ],
+ "modified": "2022-04-13 14:27:04.325703",
+ "modified_by": "Administrator",
+ "module": "Library Management",
+ "name": "Test Doctype",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "route": "/testdoctype",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}
