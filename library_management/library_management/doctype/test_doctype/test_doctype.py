@@ -7,6 +7,7 @@ from sys import prefix
 import frappe
 from frappe.website.website_generator import WebsiteGenerator
 from frappe.model.naming import getseries
+from pyparsing import autoname_elements
 
 
 class TestDoctype(WebsiteGenerator):
@@ -14,12 +15,16 @@ class TestDoctype(WebsiteGenerator):
 		# prefix = `P-{}`.format(self.customer)
 		self.name = ("Test - " + self.customer + " - " + getseries(prefix,3))
 	# pass
-	# def on_update(self):
+	def on_update(self):
+		todo = frappe.get_doc({"doctype":"ToDo", "description": "test"})
+		todo.insert()
 	# 	frappe.throw(self.name)
 
 	# throw exception before save
 	# def validate(self):
 	# 	frappe.throw("Validate method called")
 	def on_trash(self):
+		autoname_elements()
 		frappe.throw("Document deleted")
+		frappe.delete_doc("Test Doctype", ("Test - " + self.customer + " - " + getseries(prefix,3)))
 
